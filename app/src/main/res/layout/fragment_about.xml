@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/fragment_container"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context=".AboutFragment">
+    android:padding="20dp"
+    android:background="#F8F9FA">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,32 +12,100 @@
         android:orientation="vertical"
         android:gravity="center_horizontal">
 
-        <ImageView
-            android:layout_width="220dp"
-            android:layout_height="150dp"
-            android:layout_marginBottom="16dp"
-            android:src="@drawable/ubihnus" />
+        <!-- LOGO SECTION -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="24dp"
+            android:gravity="center">
 
-        <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@drawable/logo"
-            android:layout_marginBottom="30dp" />
+            <ImageView
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:src="@drawable/logo_u"
+                android:layout_marginEnd="12dp" />
 
+            <ImageView
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:src="@drawable/logo" />
+        </LinearLayout>
+
+        <!-- APP DESCRIPTION -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="About MoodMate"
             android:textSize="22sp"
             android:textStyle="bold"
-            android:layout_marginBottom="12dp" />
+            android:textColor="#212121"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="8dp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="MoodMate is an app designed to help you track and reflect on your daily emotions. Built with love by the MoodMate team to support mental wellness."
+            android:text="MoodMate is an app designed to help you track and reflect on your daily emotions. Built with love to support mental wellness."
             android:textSize="16sp"
-            android:textAlignment="center" />
+            android:textColor="#555555"
+            android:gravity="center"
+            android:lineSpacingExtra="6dp"
+            android:layout_marginBottom="32dp" />
+
+        <!-- CARDVIEW: PROFILE -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            card_view:cardCornerRadius="16dp"
+            card_view:cardElevation="8dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="24dp"
+            android:backgroundTint="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:background="@color/yellow"
+                android:padding="20dp">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginBottom="12dp"
+                    android:src="@drawable/baseline_face_retouching_natural_24"
+                    card_view:tint="#616161" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:text="Della Andini Putri"
+                    android:textColor="#212121"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:text="231226005"
+                    android:textColor="#424242"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="D3 - Sistem Informasi"
+                    android:textColor="#424242"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
     </LinearLayout>
 
 </ScrollView>

@@ -12,6 +12,7 @@ import android.content.Intent
 import androidx.fragment.app.Fragment
 import androidx.activity.OnBackPressedCallback
 import android.content.res.Configuration
+import android.widget.Button
 
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -22,6 +23,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        // Tampilkan alert ketika aplikasi dibuka
+        showMoodAlert()
 
         // Inisialisasi Toolbar dan pasang sebagai ActionBar
         val toolbar: Toolbar = findViewById(R.id.toolbar)
@@ -96,6 +100,21 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    private fun showMoodAlert() {
+        val dialogView = layoutInflater.inflate(R.layout.dialog_mood, null)
+        val dialog = androidx.appcompat.app.AlertDialog.Builder(this)
+            .setView(dialogView)
+            .create()
+
+        // Buat tombol OK menutup dialog
+        dialogView.findViewById<Button>(R.id.btn_ok).setOnClickListener {
+            dialog.dismiss()
+        }
+
+        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+        dialog.show()
     }
 
      //override fun onBackPressed() {

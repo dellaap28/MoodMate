@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_background">
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:src="@drawable/smiley"
+        android:contentDescription="Mood Icon" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="What's your mood today?"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btn_ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OK"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/yellow"
+        android:textColor="@android:color/black"/>
+
+</LinearLayout>
